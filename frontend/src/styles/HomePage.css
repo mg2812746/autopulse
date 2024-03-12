@@ -1,0 +1,69 @@
+/* HomePage.css */
+
+.header {
+  padding: 20px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-button {
+  padding: 0;
+}
+
+.logo-image {
+  width: 150px;
+  height: auto;
+}
+
+.nav-links-paper {
+  display: flex;
+  gap: 20px;
+  padding: 10px 20px;
+  background-color: transparent;
+}
+
+.nav-link {
+  text-transform: none;
+  color: #333;
+}
+
+.nav-link:hover {
+  color: #007bff;
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Add styling for the divider */
+.MuiDivider-root {
+  margin: 20px 0;
+}
+
+/* Add spacing between sections */
+.hero-section,
+.featured-section,
+.call-to-action {
+  margin-bottom: 40px;
+}
+
+/* Styles for the hero box */
+.hero-box {
+  padding: 30px;
+}
+
+/* Styles for the feature boxes */
+.feature-box {
+  padding: 20px;
+}
+
+/* Styles for the call-to-action box */
+.cta-box {
+  padding: 30px;
+}
+
+/* Add margin between title and description in featured section */
+.feature-box > *:not(:last-child) {
+  margin-bottom: 15px;
+}

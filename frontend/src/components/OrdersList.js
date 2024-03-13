@@ -3,6 +3,28 @@ import React from 'react';
 import { List, ListItem, ListItemText, Paper, Typography, Container, Grid } from '@mui/material';
 
 const OrdersList = () => {
+  // const chartDataEndpoint = 'http://127.0.0.1:8000/get-chart-data';
+  // const [data, setData] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(chartDataEndpoint);
+  //       if (!response.ok) {
+  //         throw new Error('Failed to fetch data');
+  //       }
+  //       const jsonData = await response.json();
+  //       console.log(jsonData);
+  //       // Assuming jsonData is an array of objects with 'time' and 'amount' properties
+  //       const formattedData = jsonData.map(item => createData(item.time, item.amount));
+  //       setData(formattedData);
+  //     } catch (error) {
+  //       console.error('Error fetching data:', error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
   // Dummy data for demonstration
   const orders = [
     { id: 1, customer: 'Customer 1', product: 'Product A', quantity: 2, price: 20.0 },

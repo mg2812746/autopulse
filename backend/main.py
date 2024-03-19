@@ -69,5 +69,4 @@ async def create_chart_data(chart: Chart):
 # return orders data
 @app.get("/get-orders", response_model=List[Dict[str, str]])
 async def orders():
-    
     return dummy_orders

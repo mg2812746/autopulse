@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { useTheme } from '@mui/material/styles';
-import { LineChart, axisClasses } from '@mui/x-charts';
-import Title from './Title';
-
+import React, { useState, useEffect } from "react";
+import { useTheme } from "@mui/material/styles";
+import { LineChart, axisClasses } from "@mui/x-charts";
+import Title from "./Title";
 
 // Generate Sales Data
 function createData(time, amount) {
@@ -11,7 +10,7 @@ function createData(time, amount) {
 }
 
 export default function Chart() {
-  const chartDataEndpoint = 'http://127.0.0.1:8000/get-chart-data';
+  const chartDataEndpoint = "http://127.0.0.1:8000/get-chart-data";
   const theme = useTheme();
   const [data, setData] = useState([]);
 
@@ -20,15 +19,17 @@ export default function Chart() {
       try {
         const response = await fetch(chartDataEndpoint);
         if (!response.ok) {
-          throw new Error('Failed to fetch data');
+          throw new Error("Failed to fetch data");
         }
         const jsonData = await response.json();
         console.log(jsonData);
         // Assuming jsonData is an array of objects with 'time' and 'amount' properties
-        const formattedData = jsonData.map(item => createData(item.time, item.amount));
+        const formattedData = jsonData.map((item) =>
+          createData(item.time, item.amount)
+        );
         setData(formattedData);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
@@ -38,7 +39,7 @@ export default function Chart() {
   return (
     <React.Fragment>
       <Title>Today</Title>
-      <div style={{ width: '100%', flexGrow: 1, overflow: 'hidden' }}>
+      <div style={{ width: "100%", flexGrow: 1, overflow: "hidden" }}>
         <LineChart
           dataset={data}
           margin={{
@@ -49,15 +50,15 @@ export default function Chart() {
           }}
           xAxis={[
             {
-              scaleType: 'point',
-              dataKey: 'time',
+              scaleType: "point",
+              dataKey: "time",
               tickNumber: 2,
               tickLabelStyle: theme.typography.body2,
             },
           ]}
           yAxis={[
             {
-              label: 'Sales ($)',
+              label: "Sales ($)",
               labelStyle: {
                 ...theme.typography.body1,
                 fill: theme.palette.text.primary,
@@ -69,16 +70,20 @@ export default function Chart() {
           ]}
           series={[
             {
-              dataKey: 'amount',
+              dataKey: "amount",
               showMark: false,
               color: theme.palette.primary.light,
             },
           ]}
           sx={{
-            [`.${axisClasses.root} line`]: { stroke: theme.palette.text.secondary },
-            [`.${axisClasses.root} text`]: { fill: theme.palette.text.secondary },
+            [`.${axisClasses.root} line`]: {
+              stroke: theme.palette.text.secondary,
+            },
+            [`.${axisClasses.root} text`]: {
+              fill: theme.palette.text.secondary,
+            },
             [`& .${axisClasses.left} .${axisClasses.label}`]: {
-              transform: 'translateX(-25px)',
+              transform: "translateX(-25px)",
             },
           }}
         />

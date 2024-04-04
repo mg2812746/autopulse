@@ -33,21 +33,21 @@ dummy_chart_data = [
     {"time": "18:00", "amount": "2400"},
     {"time": "21:00", "amount": "2400"},
 ]
-dummy_orders = [#id, date, name, shipTo, paymentMethod, amount 
+dummy_orders = [#id, date, name, quantity, amount 
     {"id": "0",
     "date": '16 Mar, 2019',
-    "name": 'Elvis Presley',
-    "shipTo": 'Tupelo, MS',
+    "name": 'Product A',
+    "quantity": "1",
     "amount": "312.44",},
     {"id": "1",
     "date": '16 Mar, 2019',
-    "name": 'Elvis Presley',
-    "shipTo": 'Tupelo, MS',
+    "name": 'Product B',
+    "quantity": "1",
     "amount": "312.44",},
     {"id": "2",
     "date": '16 Mar, 2019',
-    "name": 'Elvis Presley',
-    "shipTo": 'Tupelo, MS',
+    "name": 'Product C',
+    "quantity": "1",
     "amount": "312.44",},
 ]
 

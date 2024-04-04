@@ -13,9 +13,9 @@ import {
 
 // create data for orders
 // Generate Order Data
-function createData(id, date, name, shipTo, amount) {
+function createData(id, date, name, quantity, amount) {
   amount = Number(amount);
-  return { id, date, name, shipTo, amount };
+  return { id, date, name, quantity, amount };
 }
 // generate list of orders
 const OrdersList = () => {
@@ -32,13 +32,7 @@ const OrdersList = () => {
         const jsonData = await response.json();
         console.log(jsonData);
         const formattedData = jsonData.map((item) =>
-          createData(
-            item.id,
-            item.date,
-            item.name,
-            item.shipTo,
-            item.amount
-          )
+          createData(item.id, item.date, item.name, item.quantity, item.amount)
         );
         setData(formattedData);
       } catch (error) {

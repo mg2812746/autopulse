@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import Link from "@mui/material/Link";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -9,13 +8,9 @@ import TableRow from "@mui/material/TableRow";
 import Title from "../sidebar/Title";
 
 // Generate Order Data
-function createData(id, date, name, shipTo, amount) {
+function createData(id, date, name, amount) {
   amount = Number(amount);
-  return { id, date, name, shipTo, amount };
-}
-
-function preventDefault(event) {
-  event.preventDefault();
+  return { id, date, name, amount };
 }
 
 export default function Orders() {
@@ -33,7 +28,7 @@ export default function Orders() {
         console.log(jsonData);
         // Assuming jsonData is an array of objects with 'time' and 'amount' properties
         const formattedData = jsonData.map((item) =>
-          createData(item.id, item.date, item.name, item.shipTo, item.amount)
+          createData(item.id, item.date, item.name, item.amount)
         );
         setData(formattedData);
       } catch (error) {
@@ -52,8 +47,7 @@ export default function Orders() {
           <TableRow>
             <TableCell>Date</TableCell>
             <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
-            <TableCell align="right">Sale Amount</TableCell>
+            <TableCell>Sale Amount</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -61,8 +55,7 @@ export default function Orders() {
             <TableRow key={row.id}>
               <TableCell>{row.date}</TableCell>
               <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
-              <TableCell align="right">{`$${row.amount}`}</TableCell>
+              <TableCell >{`$${row.amount}`}</TableCell>
             </TableRow>
           ))}
         </TableBody>

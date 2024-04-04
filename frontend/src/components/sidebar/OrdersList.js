@@ -69,7 +69,7 @@ const OrdersList = () => {
                         {`${order.name} - ${order.date}`}
                       </Typography>
                     }
-                    secondary={`Quantity: ${order.amount}`}
+                    secondary={`Quantity: ${order.quantity}`}
                   />
                 </Grid>
                 <Grid item xs={4}>

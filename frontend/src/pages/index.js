@@ -1,4 +1,3 @@
-
 import CustomersPage from "./CustomersPage";
 import Dashboard from "./Dashboard";
 import InventoryPage from "./InventoryPage";

@@ -1,12 +1,12 @@
-import * as React from 'react';
-import {useState, useEffect} from 'react';
-import Link from '@mui/material/Link';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Title from '../sidebar/Title';
+import * as React from "react";
+import { useState, useEffect } from "react";
+import Link from "@mui/material/Link";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Title from "../sidebar/Title";
 
 // Generate Order Data
 function createData(id, date, name, shipTo, amount) {
@@ -27,21 +27,23 @@ export default function Orders() {
       try {
         const response = await fetch(orderEndpoint);
         if (!response.ok) {
-          throw new Error('Failed to fetch data');
+          throw new Error("Failed to fetch data");
         }
         const jsonData = await response.json();
         console.log(jsonData);
         // Assuming jsonData is an array of objects with 'time' and 'amount' properties
-        const formattedData = jsonData.map(item => createData(item.id, item.date, item.name,
-          item.shipTo, item.amount));
+        const formattedData = jsonData.map((item) =>
+          createData(item.id, item.date, item.name, item.shipTo, item.amount)
+        );
         setData(formattedData);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
-
+    
     fetchData();
   }, []);
+
   return (
     <React.Fragment>
       <Title>Recent Orders</Title>
@@ -65,9 +67,6 @@ export default function Orders() {
           ))}
         </TableBody>
       </Table>
-      <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-        See more orders
-      </Link>
     </React.Fragment>
   );
 }

@@ -1,4 +1,5 @@
 // ReportChart.js
+// Task: Connect to backend
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 

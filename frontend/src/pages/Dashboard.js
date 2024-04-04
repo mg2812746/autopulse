@@ -7,9 +7,9 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Link from "@mui/material/Link";
-import Chart from "../components/Chart";
-import Deposits from "../components/Deposits";
-import Orders from "../components/Orders";
+import Chart from "../components/dashboard/Chart";
+import Deposits from "../components/dashboard/Deposits";
+import Orders from "../components/dashboard/Orders";
 import AppLayout from "../layouts/AppLayout";
 
 function Copyright(props) {

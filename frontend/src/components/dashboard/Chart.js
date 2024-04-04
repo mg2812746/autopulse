@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "@mui/material/styles";
 import { LineChart, axisClasses } from "@mui/x-charts";
-import Title from "./Title";
+import Title from "../sidebar/Title";
 
 // Generate Sales Data
 function createData(time, amount) {
@@ -22,7 +22,6 @@ export default function Chart() {
           throw new Error("Failed to fetch data");
         }
         const jsonData = await response.json();
-        console.log(jsonData);
         // Assuming jsonData is an array of objects with 'time' and 'amount' properties
         const formattedData = jsonData.map((item) =>
           createData(item.time, item.amount)

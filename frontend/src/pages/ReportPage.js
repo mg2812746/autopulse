@@ -1,6 +1,6 @@
 // ReportPage.js
 import React, { useState } from "react";
-import ReportChart from "../components/ReportChart";
+import ReportChart from "../components/sidebar/ReportChart";
 import {
   Container,
   Paper,

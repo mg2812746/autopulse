@@ -1,13 +1,12 @@
-import BalanceStatement from './BalanceStatement';
-import Chart from './Chart';
+import Chart from '../dashboard/Chart';
 import Customers from './Customers';
 import Deposits from './Deposits';
 import Inventory from './Inventory';
-import ListItems from './listItems';
-import Orders from './Orders';
+import ListItems from '../../layouts/listItems';
+import Orders from '../dashboard/Orders';
 import OrdersList from './OrdersList';
 import ReportChart from './ReportChart';
 import Title from './Title';
 
-export {BalanceStatement, Chart, Customers, Deposits, Inventory, 
+export {Chart, Customers, Deposits, Inventory, 
 ListItems, Orders, OrdersList, ReportChart, Title};

@@ -1,6 +1,6 @@
 // OrdersPage.js
 import React from "react";
-import OrdersList from "../components/OrdersList";
+import OrdersList from "../components/sidebar/OrdersList";
 import AppLayout from "../layouts/AppLayout";
 import { Box } from "@mui/material";
 const OrdersPage = () => {

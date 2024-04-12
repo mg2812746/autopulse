@@ -3,8 +3,13 @@ import { useTheme } from "@mui/material/styles";
 import { LineChart, axisClasses } from "@mui/x-charts";
 import Title from "../sidebar/Title";
 
+interface ChartDataType {
+  time: string;
+  amount: number;
+}
+
 // Generate Sales Data
-function createData(time, amount) {
+function createData(time:String, amount: Number) {
   amount = Number(amount);
   return { time, amount: amount ?? null };
 }
@@ -23,7 +28,7 @@ export default function Chart() {
         }
         const jsonData = await response.json();
         // Assuming jsonData is an array of objects with 'time' and 'amount' properties
-        const formattedData = jsonData.map((item) =>
+        const formattedData = jsonData.map((item: ChartDataType) =>
           createData(item.time, item.amount)
         );
         setData(formattedData);

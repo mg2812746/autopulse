@@ -13,6 +13,10 @@ import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
 import ListItems from "./listItems";
 
+interface AppBarOwnProps{
+  open: boolean;
+}
+
 const drawerWidth = 240;
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
@@ -41,7 +45,7 @@ const Drawer = styled(MuiDrawer, {
 }));
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
+})<AppBarOwnProps>(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
@@ -56,6 +60,7 @@ const AppBar = styled(MuiAppBar, {
     }),
   }),
 }));
+
 function AppLayout() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {

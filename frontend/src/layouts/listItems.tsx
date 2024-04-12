@@ -12,7 +12,7 @@ import {useNavigate} from 'react-router-dom';
 function ListItems(){
   const navigate = useNavigate();
 
-  const handleClick = (path) => {
+  const handleClick = (path: string) => {
     // Navigate to the route when the button is clicked
     navigate(path);
   };

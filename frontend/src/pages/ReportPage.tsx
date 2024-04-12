@@ -10,17 +10,26 @@ import {
 } from "@mui/material";
 import AppLayout from "../layouts/AppLayout";
 import Box from "@mui/material/Box";
+
+type ReportPageType = {
+  month: string;
+  revenue?: number;
+  expenses?: number;
+  profits?: number;
+}[];
+
+
 const ReportPage = () => {
-  const combinedData = [
+  const combinedData: ReportPageType = [
     { month: "January", revenue: 1500, expenses: 800, profits: 700 },
     { month: "February", revenue: 2200, expenses: 1200, profits: 1000 },
     { month: "March", revenue: 1800, expenses: 1000, profits: 800 },
     { month: "April", revenue: 2500, expenses: 1500, profits: 1000 },
     // Add more data points as needed
   ];
-  const [chartData, setChartData] = useState(combinedData); // Initial data showing both profits and expenses
-  const handleToggle = (dataType) => {
-    setChartData((data) => {
+  const [chartData, setChartData] = useState<ReportPageType>(combinedData); // Initial data showing both profits and expenses
+  const handleToggle = (dataType: String) => {
+    setChartData(() => {
       let newData;
       switch (dataType) {
         case "revenue":
@@ -52,7 +61,7 @@ const ReportPage = () => {
           newData = combinedData.map(
             ({ month, revenue, expenses, profits }) => ({
               month,
-              value: revenue + expenses + profits,
+              value: (revenue??0) + (expenses??0) + (profits??0),
               label: "Combined",
               revenue,
               expenses,

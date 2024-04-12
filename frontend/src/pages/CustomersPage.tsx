@@ -1,3 +1,4 @@
+import React from 'react';
 import Customers from "../components/sidebar/Customers";
 import AppLayout from "../layouts/AppLayout";
 import Box from "@mui/material/Box";

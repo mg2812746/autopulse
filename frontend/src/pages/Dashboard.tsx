@@ -12,13 +12,13 @@ import Deposits from "../components/dashboard/Deposits";
 import Orders from "../components/dashboard/Orders";
 import AppLayout from "../layouts/AppLayout";
 
-function Copyright(props) {
+function Copyright() {
   return (
     <Typography
       variant="body2"
       color="text.secondary"
       align="center"
-      {...props}
+      sx={{ pt: 4 }}
     >
       {"Copyright © "}
       <Link color="inherit">Your Website</Link> {new Date().getFullYear()}
@@ -80,7 +80,7 @@ export default function Dashboard() {
               </Paper>
             </Grid>
           </Grid>
-          <Copyright sx={{ pt: 4 }} />
+          <Copyright/>
         </Container>
       </Box>
     </Box>
